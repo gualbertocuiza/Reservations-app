@@ -8,12 +8,14 @@ definePageMeta({
 const { setUser } = useUserStore();
 const router = useRouter();
 const errorMessage = ref("");
+const loading = ref(false);
 const form = reactive({
   email: "",
   password: "",
 });
 
 const login = async (form: object) => {
+  loading.value = true;
   try {
     const { data } = await $fetch("/api/auth/login", {
       method: "post",
@@ -23,6 +25,8 @@ const login = async (form: object) => {
     router.push("/");
   } catch (error: any) {
     errorMessage.value = error.statusMessage;
+  } finally {
+    loading.value = false;
   }
 };
 
@@ -71,7 +75,9 @@ const passwordRules = computed(() => {
             />
           </div>
           <div class="mb-4">
-            <Button block data-cy="login-button">Log In</Button>
+            <Button block data-cy="login-button" :disabled="loading"
+              >Log In</Button
+            >
           </div>
         </form>
         <p>
