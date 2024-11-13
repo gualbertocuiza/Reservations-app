@@ -23,6 +23,6 @@ export default class ReservationForm extends Form<Reservation> {
   }
 
   submit() {
-    console.log("Submit reservation form", this.model);
+    //
   }
 }
