@@ -23,8 +23,10 @@ const onReservationCreated = ({ data }: { data: any }) => {
 };
 
 const onReservationRejected = ({ data }: { data: any }) => {
-  const { removeReservation } = useReservationsStore();
+  const { removeReservation, removeReservationRequest } =
+    useReservationsStore();
   removeReservation(data._id);
+  removeReservationRequest(data._id);
 };
 
 const registerSocketEvents = () => {

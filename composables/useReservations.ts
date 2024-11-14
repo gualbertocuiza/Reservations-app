@@ -12,6 +12,7 @@ export const useReservations = (form: Reservation) => {
     const data = await ReservationEvent.addReservation(form);
     if (data.updated) {
       reservations.updateReservation(data.data);
+      reservations.removeReservationRequest(form._id!);
       if (form.user && isValidEmail(form.user.email)) {
         const email: Email = {
           to: form.user!.email,
@@ -36,6 +37,7 @@ export const useReservations = (form: Reservation) => {
   const acceptReservation = async () => {
     await ReservationEvent.addReservation(form);
     reservations.markReservationAsConfirmed(form._id!);
+    reservations.removeReservationRequest(form._id!);
     modal.hide();
     snackbar.show("Reservation request accepted", "success");
 
@@ -52,6 +54,7 @@ export const useReservations = (form: Reservation) => {
   const removeReservation = async () => {
     await ReservationEvent.removeReservation(form._id!);
     reservations.removeReservation(form._id!);
+    reservations.removeReservationRequest(form._id!);
     modal.hide();
     snackbar.show("Reservation request deleted", "success");
 

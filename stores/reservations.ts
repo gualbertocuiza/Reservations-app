@@ -50,6 +50,15 @@ export const useReservationsStore = defineStore("reservations", () => {
     }
   };
 
+  const removeReservationRequest = async (_id: string) => {
+    const index = reservationRequests.value.findIndex(
+      (reservation) => reservation._id === _id
+    );
+    if (index !== -1) {
+      reservationRequests.value.splice(index, 1);
+    }
+  };
+
   const removeReservation = async (_id: string) => {
     reservations.value = reservations.value.filter(
       (reservation) => reservation._id !== _id
@@ -97,5 +106,6 @@ export const useReservationsStore = defineStore("reservations", () => {
     setFilters,
     setReservationRequests,
     addReservationRequest,
+    removeReservationRequest,
   };
 });
