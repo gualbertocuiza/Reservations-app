@@ -1,75 +1,47 @@
-# Nuxt 3 Minimal Starter
+# Restaurant Reservation System
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This project is a restaurant reservation system that allows administrators to efficiently manage reservations in real-time.
 
-## Setup
+## Features
 
-Make sure to install the dependencies:
+- **Reservation Management**: Administrators can create, delete, accept, or reject reservation requests.
+- **Report View**: View reservation statistics by day, week, and month.
+- **Real-Time Reservations**: Reservations are updated in real-time using sockets.io.
 
-```bash
-# npm
-npm install
+## Technologies Used
 
-# pnpm
-pnpm install
+- **Nuxt 3**: Vue.js framework for building web applications.
+- **TailwindCSS**: CSS framework for designing user interfaces.
+- **MongoDB**: NoSQL database for data storage.
+- **Sockets.io**: Used to handle real time communication between client and server.
 
-# yarn
-yarn install
+## Install
 
-# bun
-bun install
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/tu-usuario/reservations-app.git
+   ```
+2. Go to root:
+   ```bash
+   cd reservations-app
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Development Server
+## Usage
 
-Start the development server on `http://localhost:3000`:
+1. Start development server:
+   ```bash
+   npm run dev
+   ```
+2. Open the browser and go to `http://localhost:3000` in order to see the app.
 
-```bash
-# npm
-npm run dev
+## License
 
-# pnpm
-pnpm run dev
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
-# yarn
-yarn dev
+## Author
 
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+This project is maintained by Gualberto Cuiza. Feel free to reach out if you have any questions or suggestions.
