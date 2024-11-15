@@ -15,6 +15,15 @@ This project is a restaurant reservation system that allows administrators to ef
 - **MongoDB**: NoSQL database for data storage.
 - **Sockets.io**: Used to handle real time communication between client and server.
 
+#### Domain Model Diagram
+
+```mermaid
+flowchart TD
+    A[User] -->|creates| B(Restaurants)
+    A[User] -->|creates or request| C(Reservations)
+    B --> |has| C
+```
+
 ## Install
 
 1. Clone the repository:
